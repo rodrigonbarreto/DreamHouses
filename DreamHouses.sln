@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Common", "0 - Common", "{656EA3E1-705B-4370-A335-7ED0D7A026A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Service", "1 - Service", "{83453EDD-4D05-4C09-BD90-9C9E702AC197}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DreamHouses.Model", "DreamHouses.Model\DreamHouses.Model.csproj", "{3276D757-570E-4D4D-B9BD-0D80AA02ECF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DreamHouses.Webb", "DreamHouses.Webb\DreamHouses.Webb.csproj", "{A8DB2418-F627-4371-8EC4-EB3274A6628B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BCF57FDE-5054-48E7-8C4C-7634E0750E71}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Test", "2 - Test", "{A9B730C5-F5DA-4E3E-ACBC-1C20AC468D3C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DreamHouses.Test", "DreamHouses.Test\DreamHouses.Test.csproj", "{A2D2619B-2473-419C-AA67-3A6E6C0070DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3276D757-570E-4D4D-B9BD-0D80AA02ECF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3276D757-570E-4D4D-B9BD-0D80AA02ECF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3276D757-570E-4D4D-B9BD-0D80AA02ECF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3276D757-570E-4D4D-B9BD-0D80AA02ECF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8DB2418-F627-4371-8EC4-EB3274A6628B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DB2418-F627-4371-8EC4-EB3274A6628B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DB2418-F627-4371-8EC4-EB3274A6628B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DB2418-F627-4371-8EC4-EB3274A6628B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D2619B-2473-419C-AA67-3A6E6C0070DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D2619B-2473-419C-AA67-3A6E6C0070DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D2619B-2473-419C-AA67-3A6E6C0070DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D2619B-2473-419C-AA67-3A6E6C0070DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3276D757-570E-4D4D-B9BD-0D80AA02ECF5} = {656EA3E1-705B-4370-A335-7ED0D7A026A0}
+		{A8DB2418-F627-4371-8EC4-EB3274A6628B} = {83453EDD-4D05-4C09-BD90-9C9E702AC197}
+		{A2D2619B-2473-419C-AA67-3A6E6C0070DF} = {A9B730C5-F5DA-4E3E-ACBC-1C20AC468D3C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA26B21B-6CFF-4275-8D34-E030EB382F8A}
+	EndGlobalSection
+EndGlobal

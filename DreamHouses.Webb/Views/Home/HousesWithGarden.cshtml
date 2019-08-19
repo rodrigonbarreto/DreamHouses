@@ -1,0 +1,41 @@
+﻿
+@model RealEStateAgentViewModel
+
+@{
+    ViewData["Title"] = "Top 10 makelaar's In Amsterdam with the most Houses with garden listed for sale.";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Top 10 makelaar's In Amsterdam with the most Houses with garden listed for sale.</p>
+</div>
+<div class="row">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var realEstateAgent in Model.RealEstateAgentCalculation)
+            {
+                <tr>
+                    <th> @realEstateAgent.Name </th>
+                    <th> @realEstateAgent.Total </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        alert("Houses with Garden Loaded");
+    });
+    </script>
+}
