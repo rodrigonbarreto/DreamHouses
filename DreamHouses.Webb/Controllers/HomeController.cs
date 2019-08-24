@@ -16,16 +16,23 @@ namespace DreamHouses.Webb.Controllers
     {
         public const int TimeCacheForRealStateAgentList = 300;
 
-        public HomeController(HousesApiClient api, IMemoryCache memoryCache)
+        public HomeController(
+            HousesApiClient api, 
+            IMemoryCache memoryCache, 
+            IList<RealEstateAgentCalculationResultMapper> realEstateAgentCalculationResultMappers,
+            List<RealEstateAgent> realStateAgentList
+            )
         {
             _api = api;
             _cache = memoryCache;
-
+            _realStateAgentList = realStateAgentList;
+            _realEstateAgentCalculationResultMappers = realEstateAgentCalculationResultMappers;
         }
 
         private readonly HousesApiClient _api;
         private readonly IMemoryCache _cache;
-
+        private List<RealEstateAgent> _realStateAgentList;
+        private IEnumerable<RealEstateAgentCalculationResultMapper> _realEstateAgentCalculationResultMappers;
 
         public async Task<IActionResult> Index()
         {
@@ -34,26 +41,25 @@ namespace DreamHouses.Webb.Controllers
 
         public async Task<IActionResult> Houses()
         {
-            var realStateAgentList = new List<RealEstateAgent>();
-            realStateAgentList = await GetAllRealStateAgents(realStateAgentList, "Houses");
-            var realEstateAgentCalculationResultMappers = RealEstateAgentCalculator.RealEstateAgentCalculationResultMappers(realStateAgentList);
+
+            _realStateAgentList = await GetAllRealStateAgents(_realStateAgentList, "Houses");
+            _realEstateAgentCalculationResultMappers = RealEstateAgentCalculator.RealEstateAgentCalculationResultMappers(_realStateAgentList);
 
             var model = new RealEStateAgentViewModel
             {
-                RealEstateAgentCalculation = realEstateAgentCalculationResultMappers.ToList()
+                RealEstateAgentCalculation = _realEstateAgentCalculationResultMappers.ToList()
             };
             return View(model);
         }
 
         public async Task<IActionResult> HousesWithGarden()
         {
-            var realStateAgentList = new List<RealEstateAgent>();
-            realStateAgentList = await GetAllRealStateAgents(realStateAgentList, "HousesWithGarden", true);
-            var realEstateAgentCalculationResultMappers = RealEstateAgentCalculator.RealEstateAgentCalculationResultMappers(realStateAgentList);
+            _realStateAgentList = await GetAllRealStateAgents(_realStateAgentList, "HousesWithGarden", true);
+            _realEstateAgentCalculationResultMappers = RealEstateAgentCalculator.RealEstateAgentCalculationResultMappers(_realStateAgentList);
 
             var model = new RealEStateAgentViewModel
             {
-                RealEstateAgentCalculation = realEstateAgentCalculationResultMappers.ToList()
+                RealEstateAgentCalculation = _realEstateAgentCalculationResultMappers.ToList()
             };
             return View(model);
         }

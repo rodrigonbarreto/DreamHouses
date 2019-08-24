@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DreamHouses.Model;
 using DreamHouses.Webb.HttpApiClient;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +27,12 @@ namespace DreamHouses.Webb
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMemoryCache();
+            services
+                .AddSingleton<IList<RealEstateAgentCalculationResultMapper>,
+                    List<RealEstateAgentCalculationResultMapper>>();
+            services
+                .AddSingleton<List<RealEstateAgent>,
+                    List<RealEstateAgent>>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {

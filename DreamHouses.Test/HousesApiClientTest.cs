@@ -41,7 +41,7 @@ namespace DreamHouses.Test
              public async Task GetAllHouses()
         {
             var request = await GetClient().GetAll();
-            Assert.True(request.Count() >= 2800 );
+            Assert.True(request.Count() >= 1000 );
         }
 
         [Fact]
