@@ -17,11 +17,10 @@ namespace DreamHouses.Webb.Controllers
         public const int TimeCacheForRealStateAgentList = 300;
 
         public HomeController(
-            HousesApiClient api, 
-            IMemoryCache memoryCache, 
+            HousesApiClient api,
+            IMemoryCache memoryCache,
             IList<RealEstateAgentCalculationResultMapper> realEstateAgentCalculationResultMappers,
-            List<RealEstateAgent> realStateAgentList
-            )
+            List<RealEstateAgent> realStateAgentList)
         {
             _api = api;
             _cache = memoryCache;
@@ -41,7 +40,6 @@ namespace DreamHouses.Webb.Controllers
 
         public async Task<IActionResult> Houses()
         {
-
             _realStateAgentList = await GetAllRealStateAgents(_realStateAgentList, "Houses");
             _realEstateAgentCalculationResultMappers = RealEstateAgentCalculator.RealEstateAgentCalculationResultMappers(_realStateAgentList);
 
@@ -64,7 +62,7 @@ namespace DreamHouses.Webb.Controllers
             return View(model);
         }
 
-        public async Task<List<RealEstateAgent>> GetAllRealStateAgents(List<RealEstateAgent> realStateAgentList,string cacheListName, bool hasGarden = false)
+        public async Task<List<RealEstateAgent>> GetAllRealStateAgents(List<RealEstateAgent> realStateAgentList, string cacheListName, bool hasGarden = false)
         {
             if (realStateAgentList == null) throw new ArgumentNullException(nameof(realStateAgentList));
 
